@@ -9,7 +9,7 @@ export class IbisokozoService {
 
   constructor(
     private afs : AngularFirestore,
-    private store : AngularFireStorage) { }
+   ) { }
 
 
 

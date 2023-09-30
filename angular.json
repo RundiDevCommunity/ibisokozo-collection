@@ -32,7 +32,8 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/@fortawesome/fontawesome-free/js/all.min.js"]
+
           },
           "configurations": {
             "production": {
@@ -95,10 +96,14 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/@fortawesome/fontawesome-free/js/all.min.js"]
+
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "8ed24f33-a3eb-4fea-800b-600c06ba8314"
   }
 }
