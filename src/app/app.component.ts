@@ -9,7 +9,8 @@ import { IbisokozoService } from './services/ibisokozo.service';
 })
 export class AppComponent implements OnInit {
   ibisokozoForm: FormGroup;
-  isSubmitting = false; // Add this variable
+  isSubmitting = false;
+  canStart:boolean = false;
 
   constructor(
     private ibisokozoService: IbisokozoService,
@@ -37,6 +38,10 @@ export class AppComponent implements OnInit {
       this.ibisokozoService.addIgisokozo(igisokozo)
         .then(() => {
           this.isSubmitting = false;
+          this.ibisokozoForm.patchValue({
+            igisokozo:'',
+            inyishu:''
+          })
   
           // Open the success dialog
         })

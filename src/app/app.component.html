@@ -1,58 +1,102 @@
 
 
-
+<div>
+  <header class="d-flex bg-primary">
+    <span class="fs-3 text-white">Rundi Dev Community</span>
+  </header>
+</div>
   
- <div class="container mt-4">
-  <h2>Add Igisokozo</h2>
-  <form [formGroup]="ibisokozoForm" (ngSubmit)="addIgisokozo()">
-    <div class="form-group">
-      <label for="igisokozo">Igisokozo</label>
-      <input
-      [disabled]="isSubmitting"
-        type="text"
-        class="form-control"
-        id="igisokozo"
-        formControlName="igisokozo"
-      />
-      <div
-        *ngIf="
-          ibisokozoForm.value.igisokozo.invalid &&
-          (ibisokozoForm.value.igisokozo.dirty ||
-            ibisokozoForm.value.igisokozo.touched)
-        "
-        class="text-danger"
-      >
-        Igisokozo is required.
-      </div>
-    </div>
-    <div class="form-group">
-      <label for="inyishu">Inyishu</label>
-      <input
-      [disabled]="isSubmitting"
-        type="text"
-        class="form-control"
-        id="inyishu"
-        formControlName="inyishu"
-      />
-      <div
-        *ngIf="
-          ibisokozoForm.value.inyishu.invalid &&
-          (ibisokozoForm.value.inyishu.dirty ||
-            ibisokozoForm.value.inyishu.touched)
-        "
-        class="text-danger"
-      >
-        Inyishu is required.
-      </div>
-    </div>
-    <button
-type="submit"
-class="btn btn-primary"
-[disabled]="ibisokozoForm.invalid || isSubmitting"
->
-<span *ngIf="isSubmitting" class="spinner-border spinner-border-sm"></span>
-<span *ngIf="!isSubmitting">Submit</span>
-</button>
+ <div class="mt-lg-5 m-3 d-flex justify-content-center w-100">
+  <div
+  class="w-75"
+  *ngIf="!canStart">
+  <h3>Kaze murisanze ! </h3>
+    <br>
+     <span class="fs-6">
 
-  </form>
+      <b>Rundi Dev community </b>ni urunani rwabarundi babahinyitsi rwagiye hamwe rufise intumbero yo guteza imbere ururimi rw'ikirundi mukurushira k'ubuhinga ngurukanabumenyi <br>
+      Muri urwo rugendo rwo gushira ikirundi kuri ngurukanabumenyi, turiko turakora urubuga rw'agakino k'ibisokozo aho umukinyi azobazwa ibisokozo n'urwo rubuga hama urwo rubuga rukamumenyesha ko yagitoye canke camunaniye <br>
+      Kugira urwo rubuga ruzobe ngirakamaro cane turakenera kuronka ibisokozo vyinshi bishoboka, Rero kuriyo mvo twari twipfuje gusaba uwobishobora ko yoduha ibisokozo yoba azi canke bishobotse akanaturonderera <br>
+      Intererana yawe izoba ngirakamaro kuri twebwe, kuri wewe ndetse nokugihugu cose <br><br>
+      <h5>Tubaye turugushimira kuntererano yawe, MURAKOZE</h5>
+     </span>
+
+     <div class="w-100 d-flex justify-content-center mt-5">
+    <button class="btn btn-primary" (click)="canStart=true">Tangura guterera</button>
+
+
+     </div>
+
+
+
+
+  </div>
+  <div class="d-grid justify-content-center cont" *ngIf="canStart">
+      <h5>Shiramwo igisokozo n'inyishu yaco</h5>
+
+  <div >
+    <div class="mt-2">
+      <form [formGroup]="ibisokozoForm" (ngSubmit)="addIgisokozo()">
+        <div class="form-group mb-3">
+          <label for="igisokozo" class="mb-1">Igisokozo</label>
+          <input
+          [disabled]="isSubmitting"
+            type="text"
+            class="form-control"
+            id="igisokozo"
+            formControlName="igisokozo"
+          />
+          <div
+            *ngIf="
+              ibisokozoForm.value.igisokozo.invalid &&
+              (ibisokozoForm.value.igisokozo.dirty ||
+                ibisokozoForm.value.igisokozo.touched)
+            "
+            class="text-danger"
+          >
+            Igisokozo is required.
+          </div>
+        </div>
+        <div class="form-group mb-3">
+          <label for="inyishu" class="mb-1">Inyishu</label>
+          <input
+          [disabled]="isSubmitting"
+            type="text"
+            class="form-control"
+            id="inyishu"
+            formControlName="inyishu"
+          />
+          <div
+            *ngIf="
+              ibisokozoForm.value.inyishu.invalid &&
+              (ibisokozoForm.value.inyishu.dirty ||
+                ibisokozoForm.value.inyishu.touched)
+            "
+            class="text-danger"
+          >
+            Inyishu is required.
+          </div>
+        </div>
+        <div class="w-100 d-flex justify-content-center mt-4">
+          <button
+          type="submit"
+          class="btn btn-primary py-2 px-4"
+          [disabled]="ibisokozoForm.invalid || isSubmitting"
+          >
+          <span *ngIf="isSubmitting" class="spinner-border spinner-border-sm"></span>
+          <span *ngIf="!isSubmitting">Bika</span>
+          </button>
+
+        </div>
+    
+    
+      </form>
+    </div>
+
+  </div>
+  </div>
+
+
+
+
 </div>
